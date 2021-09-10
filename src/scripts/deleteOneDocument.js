@@ -11,5 +11,7 @@ async function deleteOne(id) {
 	const docId = id || 'IgGcFb3glpaM27C7DYK6'
 
 	const docRef = db.collection(USERS).doc(docId)
+	const docSnapshot = await docRef.get()
+	console.log('Document exists? ', docSnapshot.exists);
 	const result = await docRef.delete()
 }
