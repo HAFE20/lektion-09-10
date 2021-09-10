@@ -1,4 +1,4 @@
-const { connect } = require('../database.js')
+const { connect, getTimestampNow } = require('../database.js')
 const db = connect()
 
 const USERS = 'users'
@@ -6,12 +6,13 @@ const USERS = 'users'
 addOne();
 
 
+
 async function addOne() {
 	console.log('Add a new document...');
 	const object = {
 		name: 'Hermione Granger',
 		email: 'hermione@email.com',
-		lastOnline: 0
+		lastOnline: getTimestampNow()
 	}
 
 	const docRef = await db.collection(USERS).add(object)

@@ -1,4 +1,6 @@
 const admin = require("firebase-admin");
+const Timestamp = admin.firestore.Timestamp
+
 const serviceAccount = require("./secrets/firebase-key.json");
 
 
@@ -11,4 +13,9 @@ function connect() {
 	return db
 }
 
-module.exports = { connect }
+function getTimestampNow() {
+	const now = Math.round(Date.now() / 1000)
+	return new Timestamp(now, 0)
+}
+
+module.exports = { connect, getTimestampNow }
