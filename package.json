@@ -1,0 +1,25 @@
+{
+  "name": "lektion-09-10",
+  "version": "1.0.0",
+  "description": "Lektion 9 september - Firestore och Express",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HAFE20/lektion-09-10.git"
+  },
+  "keywords": [
+    "Firestore",
+    "node",
+    "Express"
+  ],
+  "author": "David Andersson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HAFE20/lektion-09-10/issues"
+  },
+  "homepage": "https://github.com/HAFE20/lektion-09-10#readme",
+  "dependencies": {
+    "firebase-admin": "^9.11.1"
+  }
+}
