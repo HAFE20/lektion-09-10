@@ -8,8 +8,10 @@ const PORT = process.env.PORT || 1337
 
 
 // middleware
+app.use( express.urlencoded({ extended: true }) )
+app.use( express.json() )
 app.use((req, res, next) => {
-	console.log(`${req.method}  ${req.url}`);
+	console.log(`${req.method}  ${req.url}`, req.body);
 	next()
 })
 
