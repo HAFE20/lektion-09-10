@@ -36,4 +36,5 @@ async function getAll() {
 	})
 
 	console.log('Data from database:', array);
+	return array
 }
