@@ -14,6 +14,13 @@ router.get('/', async (req, res) => {
 	res.send(array)
 })
 
+router.get('/:id', async (req, res) => {
+	const maybeUser = await getOne(req.params.id)
+	res.send(maybeUser)  // antingen null eller ett user-objekt
+})
+// GET id
+// PUT
+
 
 async function getAll() {
 	const usersRef = db.collection(USERS)
@@ -31,5 +38,17 @@ async function getAll() {
 	})
 	return array
 }
+async function getOne(id) {
+	const docRef = db.collection(USERS).doc(id)
+	const docSnapshot = await docRef.get()
+	if( docSnapshot.exists ) {
+		return await docSnapshot.data()
+	} else {
+		return null
+	}
+}
+
+
+
 
 module.exports = router
